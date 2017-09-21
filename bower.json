@@ -1,0 +1,22 @@
+{
+  "name": "add-card",
+  "version": "1.0.0",
+  "description": "\n    \n    \n    \n  ",
+  "main": "add-card.html",
+  "keywords": [
+    "polymer",
+    "web-components"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~1.9.3",
+    "iron-pages": "PolymerElements/iron-pages#~1.0.9",
+    "paper-dialog-scrollable": "PolymerElements/paper-dialog-scrollable#~1.1.5",
+    "paper-fab": "PolymerElements/paper-fab#~1.2.2",
+    "paper-dialog": "*",
+    "icon-icons": "*"
+  },
+  "devDependencies": {
+    "iron-test-helpers": "*",
+    "web-component-tester": "^5.0.0"
+  }
+}

@@ -1,0 +1,63 @@
+<link rel="import" href="../icon-icons/iron-icons.html">
+<link rel="import" href="../paper-dialog/paper-dialog.html">
+<link rel="import" href="../paper-fab/paper-fab.html">
+<link rel="import" href="../paper-dialog-scrollable/paper-dialog-scrollable.html">
+<link rel="import" href="../iron-pages/iron-pages.html">
+<link rel="import" href="../polymer/polymer.html">
+<!--
+  `<add-card></add-card>` add-card
+  @demo demo.html
+-->
+<dom-module id="add-card">
+  <template>
+    <paper-dialog open ed modal with-backdrop >
+      
+      <h2>Add</h2> 
+      <paper-dialog-scrollable style="min-height:100px;min-width:300px">
+        <iron-pages selected="[[selected]]" items="{{items}}">
+          <content></content>
+        </iron-pages>
+      </paper-dialog-scrollable>
+    
+      <div class="buttons" style="justify-content: space-between;padding: 8px" >
+        <paper-fab mini icon="remove" on-tap="remove"></paper-fab>
+        <div style="padding: 8px"></div>
+        <paper-fab mini icon="add" on-tap="add" autofocus ></paper-fab>
+      </div>
+    </paper-dialog>
+    
+    <paper-fab style="position: fixed;right: 25px;bottom: 30px" icon="add" on-tap="open" autofocus ></paper-fab>
+    
+    </iron-icons>  
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "add-card",
+    properties:{
+      selected:{
+        type:Number,
+        value:0,
+      },
+    },
+    remove: function(undefined){
+      if (this.selected) {
+        this.selected--
+      } else {
+        this.$$("paper-dialog").close()
+      }
+      
+    },
+    add: function(undefined){
+      if (+this.selected < this.items.length-1) {
+        this.selected++
+      } else {
+        this.selected = 0
+        this.$$("paper-dialog").close()
+      } 
+    },
+    open: function(undefined){
+      this.$$("paper-dialog").open()
+    },
+  })
+</script>
