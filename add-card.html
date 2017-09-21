@@ -44,7 +44,6 @@
       } else {
         this.$$("paper-dialog").close()
       }
-      
     },
     add: function(){
       if (+this.selected < this.items.length-1) {
@@ -52,6 +51,7 @@
       } else {
         this.selected = 0
         this.$$("paper-dialog").close()
+        this.fire("done")
       } 
     },
     open: function(){
