@@ -10,7 +10,17 @@
 -->
 <dom-module id="add-card">
   <template>
-    <paper-dialog style="min-height:95%;min-width:95%;display: flex;flex-direction: column;justify-content: space-between;"> 
+    <style>
+      paper-dialog {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height:95%;
+        min-width:95%;
+      }
+    </style>
+    
+    <paper-dialog> 
       <h2>Add</h2> 
       <iron-pages selected="[[selected]]" items="{{items}}">
         <slot></slot>
