@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>add-card</title>
+    <script src="../../webcomponentsjs/webcomponents.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../test-fixture/test-fixture-mocha.js"></script>
+    <script src="../../iron-test-helpers/mock-interactions.js"></script>
+    <link rel="import" href="../../polymer/polymer.html">
+    <link rel="import" href="../../test-fixture/test-fixture.html">
+    <link rel="import" href="../add-card.html">
+  </head>
+  <body>
+    <test-fixture id="addCard">
+      <template>
+        <add-card></add-card> //TODO add attributes
+      </template>
+    </test-fixture>
+    <script>
+      suite('<add-card>', function () {
+        var addCard;
+        setup(function () {
+          addCard = fixture('addCard');
+        });
+        teardown(function () {
+          //...
+        });
+        suite("This test is just to show that tests are running", function () {
+          test("test is running", function(done) {
+            done()
+          })
+        })
+        suite('These test allow you to interact with the element', function () {
+          test('can be triggered with space', function(done) {
+            addCard.addEventListener('keydown', function() {
+              done()
+            })
+            MockInteractions.pressSpace(addCard)
+          })
+          test('can be clicked', function(done) {
+            addCard.addEventListener('click', function() {
+              done()
+            })
+            MockInteractions.tap(addCard)
+          })
+        })
+      })
+    </script>
+  </body>
+</html>
