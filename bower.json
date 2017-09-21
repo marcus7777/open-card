@@ -1,7 +1,7 @@
 {
   "name": "add-card",
   "version": "1.0.0",
-  "description": "\n    \n    \n    \n  ",
+  "description": "Add one thing at a time",
   "main": "add-card.html",
   "keywords": [
     "polymer",
@@ -12,8 +12,7 @@
     "iron-pages": "PolymerElements/iron-pages#~1.0.9",
     "paper-dialog-scrollable": "PolymerElements/paper-dialog-scrollable#~1.1.5",
     "paper-fab": "PolymerElements/paper-fab#~1.2.2",
-    "paper-dialog": "*",
-    "icon-icons": "*"
+    "paper-dialog": "PolymerElements/paper-dialog#~1.5.3",
   },
   "devDependencies": {
     "iron-test-helpers": "*",
