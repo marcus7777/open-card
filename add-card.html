@@ -12,11 +12,11 @@
   <template>
     <paper-dialog style="min-height:95%;min-width:95%"> 
       <h2>Add</h2> 
-      <paper-dialog-scrollable style="height: 70vh;">
+      <div style="min-height: 70vh;">
         <iron-pages selected="[[selected]]" items="{{items}}">
           <slot></slot>
         </iron-pages>
-      </paper-dialog-scrollable>
+      </div>
     
       <div class="buttons" style="justify-content: space-between;padding: 8px;" >
         <paper-fab mini icon="remove" on-tap="remove"></paper-fab>
