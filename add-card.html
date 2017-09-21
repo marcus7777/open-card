@@ -43,6 +43,7 @@
         this.selected--
       } else {
         this.$$("paper-dialog").close()
+        this.fire("cancel")
       }
     },
     add: function(){
