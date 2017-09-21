@@ -12,7 +12,7 @@
     "iron-pages": "PolymerElements/iron-pages#~1.0.9",
     "paper-dialog-scrollable": "PolymerElements/paper-dialog-scrollable#~1.1.5",
     "paper-fab": "PolymerElements/paper-fab#~1.2.2",
-    "paper-dialog": "PolymerElements/paper-dialog#~1.5.3",
+    "paper-dialog": "PolymerElements/paper-dialog#~1.5.3"
   },
   "devDependencies": {
     "iron-test-helpers": "*",
