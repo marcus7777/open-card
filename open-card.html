@@ -8,7 +8,7 @@
   `<add-card></add-card>` add-card
   @demo demo.html
 -->
-<dom-module id="add-card">
+<dom-module id="open-card">
   <template>
     <style>
       paper-dialog {
@@ -21,7 +21,7 @@
     </style>
     
     <paper-dialog> 
-      <h2>Add</h2> 
+      <h2>[[heading]]</h2> 
       <iron-pages selected="[[selected]]" items="{{items}}">
         <slot></slot>
       </iron-pages>
@@ -37,12 +37,17 @@
 </dom-module>
 <script>
   Polymer({
-    is: "add-card",
+    is: "open-card",
     properties:{
       selected:{
         type:Number,
         value:0,
+        notify:true,
       },
+      heading:{
+        value: "Add",
+        type:string,
+      }
     },
     remove: function(){
       if (this.selected) {
