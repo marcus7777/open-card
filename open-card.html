@@ -33,7 +33,7 @@
       </div>
     </paper-dialog>
  
-    <paper-fab style="position: fixed;right: 25px;bottom: 30px" icon="add" on-tap="open" autofocus ></paper-fab>
+    <paper-fab style="position: fixed;right: 25px;bottom: 30px" icon="add" on-tap="addNew" autofocus ></paper-fab>
     
   </template>
 </dom-module>
@@ -67,6 +67,11 @@
         this.$$("paper-dialog").close()
         this.fire("done")
       } 
+    },
+    addNew: function(){
+      this.selected = 0
+      this.open()
+      this.fire("new")
     },
     open: function(){
       this.$$("paper-dialog").open()
