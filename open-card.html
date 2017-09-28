@@ -22,15 +22,17 @@
     
     <paper-dialog> 
       <h2>[[heading]]</h2> 
-      <iron-pages selected="[[selected]]" items="{{items}}">
-        <slot></slot>
-      </iron-pages>
+      <paper-dialog-scrollable>
+        <iron-pages selected="[[selected]]" items="{{items}}">
+          <slot></slot>
+        </iron-pages>
+      </paper-dialog-scrollable>
       <div class="buttons" style="justify-content: space-between;padding: 8px;" >
         <paper-fab mini icon="remove" on-tap="remove"></paper-fab>
         <paper-fab mini icon="add" on-tap="add" autofocus ></paper-fab>
       </div>
     </paper-dialog>
-    
+ 
     <paper-fab style="position: fixed;right: 25px;bottom: 30px" icon="add" on-tap="open" autofocus ></paper-fab>
     
   </template>
