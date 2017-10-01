@@ -24,12 +24,12 @@
     <paper-dialog> 
       <h2>[[heading]]</h2> 
       <paper-dialog-scrollable>
-        <template is="dom-if" if="[[loaded]]">
+        <template is="dom-if" if="[[!loading]]">
           <iron-pages selected="[[selected]]" items="{{items}}">
             <slot></slot>
           </iron-pages>
         </template>
-        <template is="dom-if" if="[[!loaded]]"> 
+        <template is="dom-if" if="[[loading]]"> 
           <paper-spinner active></paper-spinner>
         </template>
       </paper-dialog-scrollable>
@@ -55,7 +55,10 @@
       heading:{
         value: "Add",
         type: String,
-      }
+      },
+      loading:{
+        value: false,
+      },
     },
     remove: function(){
       if (this.selected) {
