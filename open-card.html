@@ -22,7 +22,10 @@
     </style>
     
     <paper-dialog> 
-      <h2>[[heading]]</h2> 
+      <h2>[[heading]]</h2>
+      <template is="dom-repeat" items="[[icons]]">
+        <iron-icon icon="[[item]]"></iron-icon>
+      </template>
       <paper-dialog-scrollable>
         <div style="min-height: 200px;">
           <template is="dom-if" if="[[!loading]]">
@@ -61,6 +64,7 @@
       loading:{
         value: false,
       },
+      icons:Array,
     },
     remove: function(){
       if (this.selected) {
