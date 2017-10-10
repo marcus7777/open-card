@@ -23,10 +23,8 @@
     </style>
     
     <paper-dialog> 
-      <h2>[[heading]]</h2>
-      <template is="dom-repeat" items="[[icons]]">
-        <iron-icon icon="[[item]]"></iron-icon>
-      </template>
+      <h2>[[heading]] <template is="dom-repeat" items="[[icons]]"><iron-icon icon="[[item]]"></iron-icon></template></h2>
+      
       <paper-dialog-scrollable>
         <div style="min-height: 200px;">
           <template is="dom-if" if="[[!loading]]">
