@@ -38,7 +38,7 @@
         </div>
       </paper-dialog-scrollable>
       <template is="dom-if" if="[[showTheChips]]">
-        <div class="buttons" style="justify-content: space-between;padding: 8px;" >
+        <div class="buttons" style="justify-content: space-around;padding: 8px;" >
           <template is="dom-repeat" items="[[chips]]">
             <paper-chip Single-line icon="[[item]]">[[index]]</paper-chip>
           </template>
@@ -56,7 +56,6 @@
       </div>
     </paper-dialog>
     <paper-fab style="position: fixed;bottom: 30px;margin-left: -29px;left: 50%;" icon="android" on-tap="addNew" autofocus ></paper-fab>
-    
   </template>
 </dom-module>
 <script>
