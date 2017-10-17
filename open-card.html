@@ -42,6 +42,11 @@
           <template is="dom-repeat" items="[[chips]]">[[index]] <paper-chip icon="[[item]]">[[index]]</paper-chip></template>
         </div>
       </template>
+      <template is="dom-if" if="[[showTheChips]]">
+        <div class="buttons" style="justify-content: space-between;padding: 8px;" >
+          [[prompt]]
+        </div>
+      </template>
       <div class="buttons" style="justify-content: space-between;padding: 8px;" >
         <paper-fab mini icon="remove" on-tap="remove"></paper-fab>
         <paper-fab icon="android" on-tap="showChips" autofocus ></paper-fab>
@@ -73,6 +78,9 @@
       chips:{
         type: Array,
         value:[1,2,3]
+      },
+      prompt:{
+        value:"Title ?"
       },
     },
     remove: function(){
