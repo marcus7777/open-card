@@ -45,17 +45,16 @@
         </div>
       </template>
       <template is="dom-if" if="[[showTheChips]]">
-        <div class="buttons" style="justify-content: space-between;padding: 8px;" >
+        <div class="buttons" style="justify-content: space-around;padding: 8px;" >
           <span>[[prompt]]</span>
         </div>
       </template>
-      <div class="buttons" style="justify-content: space-between;padding: 8px;" >
+      <div class="buttons" style="justify-content: space-around;padding: 8px;" >
         <paper-fab mini icon="remove" on-tap="remove"></paper-fab>
         <paper-fab icon="android" on-tap="showChips" autofocus ></paper-fab>
         <paper-fab mini icon="add" on-tap="add" autofocus ></paper-fab>
       </div>
     </paper-dialog>
- 
     <paper-fab style="position: fixed;bottom: 30px;margin-left: -29px;left: 50%;" icon="android" on-tap="addNew" autofocus ></paper-fab>
     
   </template>
