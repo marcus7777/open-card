@@ -1,6 +1,7 @@
 <link rel="import" href="../paper-dialog-scrollable/paper-dialog-scrollable.html">
 <link rel="import" href="../paper-spinner/paper-spinner.html">
 <link rel="import" href="../paper-dialog/paper-dialog.html">
+<link rel="import" href="../paper-chips/paper-chips.html">
 <link rel="import" href="../iron-pages/iron-pages.html">
 <link rel="import" href="../iron-icons/iron-icons.html">
 <link rel="import" href="../iron-icon/iron-icon.html">
@@ -36,9 +37,9 @@
           </template>
         </div>
       </paper-dialog-scrollable>
-      <template is="dom-if" if="[[!loading]]">
+      <template is="dom-if" if="[[showTheChips]]">
         <div class="buttons" style="justify-content: space-between;padding: 8px;" >
-          chips here
+          <template is="dom-repeat" items="[[chips]]">[[index]] <paper-chips icon="[[item]]">[[index]]</paper-chips></template>
         </div>
       </template>
       <div class="buttons" style="justify-content: space-between;padding: 8px;" >
@@ -69,6 +70,10 @@
         value: false,
       },
       icons:Array,
+      chips:{
+        type: Array,
+        value:[1,2,3]
+      },
     },
     remove: function(){
       if (this.selected) {
@@ -97,6 +102,9 @@
     },
     close: function(){
       this.$$("paper-dialog").close()
+    },
+    showChips: function(){
+      this.showTheChips = !this.showTheChips
     },
   })
 </script>
