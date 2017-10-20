@@ -40,7 +40,7 @@
       <template is="dom-if" if="[[chips]]">
         <div class="buttons" style="justify-content: space-around;padding: 8px;" >
           <template is="dom-repeat" items="[[chips]]">
-            <paper-chip on-tap="fireChip" Single-line value="[[index]]">[[item]]</paper-chip>
+            <paper-chip on-tap="fireChip" Single-line value="[[index]]"><h1>[[item]]</h1></paper-chip>
           </template>
         </div>
       </template>
