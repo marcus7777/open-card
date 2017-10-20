@@ -79,10 +79,9 @@
       icons:Array,
       chips:{
         type: Array,
-        value:[1,2,3]
       },
       prompt:{
-        value:"Title ?"
+        value: ""
       },
     },
     remove: function(){
@@ -114,7 +113,10 @@
       this.$$("paper-dialog").close()
     },
     fireChip: function(e,d){
-      console.log(e,d)
+      this.fire("chip",{
+        chip: e.currentTarget.innerText.replace("\n",""),
+        prompt: this.prompt,
+      })
     },
   })
 </script>
