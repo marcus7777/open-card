@@ -140,7 +140,7 @@
     },
     fireOtherChip: function(e){
       var command = e.currentTarget.innerText.replace("\n","").trim().toLowerCase()
-      if ( command === "done" || command === "save" || command === "add" || command === "next") {
+      if ( command === "done" || command === "save" || command === "add" || command === "next" || command === "show it") {
         this.add()
       } else if ( command === "delete" || command === "cancel" || command === "edit" || command === "remove") {
         this.remove()
