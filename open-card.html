@@ -139,9 +139,9 @@
     fireOtherChip: function(e){
       var command = e.currentTarget.innerText.replace("\n","")
       if ( command.toLowerCase() === "done" ) {
-        this.$$("paper-dialog").add()
+        this.add()
       } else if ( command.toLowerCase() === "cancel" ) {
-        this.$$("paper-dialog").remove()
+        this.remove()
       }
     },
     flipChips: function() {
