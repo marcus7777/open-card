@@ -93,6 +93,7 @@
       icons:Array,
       chips:{
         type: Array,
+        observer: "unflipChips",
       },
       otherChips:{
         type: Array,
@@ -147,6 +148,9 @@
     },
     flipChips: function() {
       this.set("flippedChips", !this.flippedChips)
+    },
+    unflipChips: function(){
+      this.flippedChips = false
     },
   })
 </script>
