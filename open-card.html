@@ -129,6 +129,7 @@
     },
     close: function(){
       this.$$("paper-dialog").close()
+      this.flippedChips = false
     },
     fireChip: function(e,d){
       this.fire("chip",{
