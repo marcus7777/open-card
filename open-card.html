@@ -148,9 +148,12 @@
     },
     flipChips: function() {
       this.set("flippedChips", !this.flippedChips)
+      this.flippedAt = performance.now() 
     },
     unflipChips: function(){
-      this.flippedChips = false
+      if (this.flippedAt < performance.now() - 3000 ) {
+        this.flippedChips = false
+      }
     },
   })
 </script>
