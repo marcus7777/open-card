@@ -52,7 +52,7 @@
         <template is="dom-if" if="[[otherChips.length]]">
           <div class="buttons" style="justify-content: space-around;padding: 8px;" >
             <template is="dom-repeat" items="[[otherChips]]">
-              <paper-chip on-tap="fireOtherChip" Single-line value="[[index]]">
+              <paper-chip on-tap="fireOtherChip" index="[[index]]" Single-line value="[[index]]">
                 <div class="label">[[item]]</div>
               </paper-chip>
             </template>
@@ -138,10 +138,10 @@
       })
     },
     fireOtherChip: function(e){
-      var command = e.currentTarget.innerText.replace("\n","")
-      if ( command.toLowerCase() === "done" ) {
+      var command = e.currentTarget.innerText.replace("\n","").trim().toLowerCase()
+      if ( command === "done" && command === "save" && command === "add" && command === "next") {
         this.add()
-      } else if ( command.toLowerCase() === "cancel" ) {
+      } else if ( command === "delete" && command === "cancel" && command === "edit" && command === "remove") {
         this.remove()
       }
     },
