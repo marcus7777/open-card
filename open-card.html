@@ -37,14 +37,27 @@
           </template>
         </div>
       </paper-dialog-scrollable>
-      <template is="dom-if" if="[[chips]]">
-        <div class="buttons" style="justify-content: space-around;padding: 8px;" >
-          <template is="dom-repeat" items="[[chips]]">
-            <paper-chip on-tap="fireChip" Single-line value="[[index]]">
-              <div class="label">[[item]]</div>
-            </paper-chip>
-          </template>
-        </div>
+      <template is="dom-if" if="[[!flippedChips]]">
+        <template is="dom-if" if="[[chips.length]]">
+          <div class="buttons" style="justify-content: space-around;padding: 8px;" >
+            <template is="dom-repeat" items="[[chips]]">
+              <paper-chip on-tap="fireChip" Single-line value="[[index]]">
+                <div class="label">[[item]]</div>
+              </paper-chip>
+            </template>
+          </div>
+        </template>
+      </template>
+      <template is="dom-if" if="[[flippedChips]]">
+        <template is="dom-if" if="[[otherChips.length]]">
+          <div class="buttons" style="justify-content: space-around;padding: 8px;" >
+            <template is="dom-repeat" items="[[otherChips]]">
+              <paper-chip on-tap="fireOtherChip" Single-line value="[[index]]">
+                <div class="label">[[item]]</div>
+              </paper-chip>
+            </template>
+          </div>
+        </template>
       </template>
       <template is="dom-if" if="[[prompt]]">
         <div class="buttons" style="justify-content: space-around;padding: 8px;" >
@@ -52,9 +65,7 @@
         </div>
       </template>
       <div class="buttons" style="justify-content: space-around;padding: 8px;" >
-        <paper-fab mini icon="remove" on-tap="remove"></paper-fab>
         <paper-fab icon="android" on-tap="ai" autofocus ></paper-fab>
-        <paper-fab mini icon="add" on-tap="add" autofocus ></paper-fab>
       </div>
     </paper-dialog>
     <paper-fab style="position: fixed;bottom: 30px;margin-left: -29px;left: 50%;" icon="android" on-tap="addNew" autofocus ></paper-fab>
@@ -73,12 +84,19 @@
         value: "Add",
         type: String,
       },
+      flippedChips: {
+        value: false,
+      },
       loading:{
         value: false,
       },
       icons:Array,
       chips:{
         type: Array,
+      },
+      otherChips:{
+        type: Array,
+        value: ["Cancel","Done"]
       },
       prompt:{
         value: ""
@@ -117,6 +135,17 @@
         chip: e.currentTarget.innerText.replace("\n",""),
         prompt: this.prompt,
       })
+    },
+    fireOtherChip: function(e){
+      var command = e.currentTarget.innerText.replace("\n","")
+      if ( command.toLowerCase() === "done" ) {
+        this.$$("paper-dialog").add()
+      } else if ( command.toLowerCase() === "cancel" ) {
+        this.$$("paper-dialog").remove()
+      }
+    },
+    flipChips: function() {
+      this.flippedChips = !this.flippedChips
     },
   })
 </script>
