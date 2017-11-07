@@ -41,7 +41,7 @@
         <template is="dom-if" if="[[chips.length]]">
           <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 400;" >
             <template is="dom-repeat" items="[[chips]]">
-              <paper-chip on-tap="fireChip" Single-line value="[[index]]">
+              <paper-chip on-tap="fireChip" Single-line value="[[index]]"  style="z-index: 400;">
                 <div class="label">[[item]]</div>
               </paper-chip>
             </template>
