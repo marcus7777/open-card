@@ -55,7 +55,7 @@
       </template>
       <template is="dom-if" if="[[flippedChips]]">
         <template is="dom-if" if="[[otherChips.length]]">
-          <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 401;" >
+          <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 401;" on-tap="flipChips">
             <template is="dom-repeat" items="[[otherChips]]">
               <paper-chip on-tap="fireOtherChip" index="[[index]]" Single-line value="[[index]]">
                 <div class="label">[[item]]</div>
@@ -65,18 +65,18 @@
         </template>
       </template>
       <template is="dom-if" if="[[prompt]]">
-        <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 401;" >
+        <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 401;" on-tap="flipChips">
           <span>[[prompt]]</span>
         </div>
       </template>
       <template is="dom-if" if="[[!svg]]">
-        <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 401;" >
+        <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 401;" on-tap="flipChips">
           <paper-fab icon="android" on-tap="flipChips" autofocus ></paper-fab>
         </div>
       </template>
       <template is="dom-if" if="[[svg]]">
-        <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 400;" >
-          <img style="position: fixed;bottom: 17px;margin-left: -30px;left: 50%;height: 60px;" src="[[svg]]" on-tap="flipChips" autofocus />
+        <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 400;" on-tap="flipChips">
+          <img style="position: fixed;bottom: 17px;margin-left: -30px;left: 50%;height: 60px;" src="[[svg]]" autofocus  on-tap="flipChips"/>
         </div>
       </template>
     </paper-dialog>
