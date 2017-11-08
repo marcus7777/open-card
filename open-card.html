@@ -21,9 +21,14 @@
         min-height:95%;
         min-width:95%;
       }
+      paper-dialog bottons>span {
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 7px;
+        padding: 0 5px;
+      }
     </style>
     
-    <paper-dialog> 
+    <paper-dialog>
       <h2>[[heading]] <template is="dom-repeat" items="[[icons]]"><iron-icon style="float: right" icon="[[item]]"></iron-icon></template></h2>      
       <paper-dialog-scrollable>
         <div style="min-height: 200px;">
