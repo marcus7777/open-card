@@ -39,7 +39,7 @@
       </paper-dialog-scrollable>
       <template is="dom-if" if="[[!flippedChips]]">
         <template is="dom-if" if="[[chips.length]]">
-          <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 400;" >
+          <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 401;" >
             <template is="dom-repeat" items="[[chips]]">
               <paper-chip on-tap="fireChip" Single-line value="[[index]]"  style="z-index: 400;">
                 <div class="label">[[item]]</div>
@@ -50,7 +50,7 @@
       </template>
       <template is="dom-if" if="[[flippedChips]]">
         <template is="dom-if" if="[[otherChips.length]]">
-          <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 400;" >
+          <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 401;" >
             <template is="dom-repeat" items="[[otherChips]]">
               <paper-chip on-tap="fireOtherChip" index="[[index]]" Single-line value="[[index]]">
                 <div class="label">[[item]]</div>
@@ -60,12 +60,12 @@
         </template>
       </template>
       <template is="dom-if" if="[[prompt]]">
-        <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 400;" >
+        <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 401;" >
           <span>[[prompt]]</span>
         </div>
       </template>
       <template is="dom-if" if="[[!svg]]">
-        <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 400;" >
+        <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 401;" >
           <paper-fab icon="android" on-tap="flipChips" autofocus ></paper-fab>
         </div>
       </template>
