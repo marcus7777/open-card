@@ -76,7 +76,7 @@
       </template>
       <template is="dom-if" if="[[svg]]">
         <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 400;" on-tap="flipChips">
-          <img style="position: fixed;bottom: 17px;margin-left: -30px;left: 50%;height: 60px;" src="[[svg]]" autofocus  on-tap="flipChips"/>
+          <img style="position: fixed;bottom: 17px;margin-left: -30px;left: 50%;height: 60px;" src="[[svg]]" autofocus on-tap="flipChipsTest"/>
         </div>
       </template>
     </paper-dialog>
@@ -165,6 +165,10 @@
       } else if ( command === "delete" || command === "cancel" || command === "edit" || command === "remove") {
         this.remove()
       }
+    },
+    flipChipsTest: function() {
+      this.set("flippedChips", !this.flippedChips)
+      this.flippedAt = performance.now() 
     },
     flipChips: function() {
       this.set("flippedChips", !this.flippedChips)
