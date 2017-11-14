@@ -76,7 +76,9 @@
       </template>
       <template is="dom-if" if="[[svg]]">
         <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 400;" on-tap="flipChips">
-          <img style="position: fixed;bottom: 17px;margin-left: -30px;left: 50%;height: 60px;" src="[[svg]]" autofocus on-tap="flipChipsTest"/>
+          <span on-tap="flipChipsTest" style="position: fixed;bottom: 17px;">
+            <img style="margin-left: -30px;left: 50%;height: 60px;" src="[[svg]]" autofocus/>
+          </span>
         </div>
       </template>
     </paper-dialog>
