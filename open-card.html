@@ -28,7 +28,7 @@
       }
     </style>
     
-    <paper-dialog>
+    <paper-dialog on-tap="flipChips">
       <h2>[[heading]] <template is="dom-repeat" items="[[icons]]"><iron-icon style="float: right" icon="[[item]]"></iron-icon></template></h2>      
       <paper-dialog-scrollable>
         <div style="min-height: 200px;">
@@ -55,7 +55,7 @@
       </template>
       <template is="dom-if" if="[[flippedChips]]">
         <template is="dom-if" if="[[otherChips.length]]">
-          <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 401;" on-tap="flipChips">
+          <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 401;">
             <template is="dom-repeat" items="[[otherChips]]">
               <paper-chip on-tap="fireOtherChip" index="[[index]]" Single-line value="[[index]]">
                 <div class="label">[[item]]</div>
