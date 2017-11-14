@@ -76,9 +76,7 @@
       </template>
       <template is="dom-if" if="[[svg]]">
         <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 400;" on-tap="flipChips">
-          <span on-tap="flipChipsTest" style="position: fixed;bottom: 17px;">
-            <img style="margin-left: -30px;left: 50%;height: 60px;" src="[[svg]]" autofocus/>
-          </span>
+          <img on-tap="flipChipsTest" style="position: fixed;bottom: 17px;margin-left: -30px;left: 50%;height: 60px;" src="[[svg]]" autofocus/>
         </div>
       </template>
     </paper-dialog>
@@ -170,11 +168,11 @@
     },
     flipChipsTest: function() {
       this.set("flippedChips", !this.flippedChips)
-      this.flippedAt = performance.now() 
+      this.flippedAt = performance.now()
     },
     flipChips: function() {
       this.set("flippedChips", !this.flippedChips)
-      this.flippedAt = performance.now() 
+      this.flippedAt = performance.now()
     },
     unflipChips: function(){
       if (this.flippedAt < performance.now() - 3000 ) {
