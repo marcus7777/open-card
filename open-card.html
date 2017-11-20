@@ -14,21 +14,28 @@
 <dom-module id="open-card">
   <template>
     <style>
-      paper-dialog {
+      :host > div {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        min-height:95%;
-        min-width:95%;
+        position: absolute;
+        background: #fff;
+        z-index: 1000;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        margin: 0;
+        padding: 0;
       }
-      paper-dialog .buttons>span {
+      :host > div .buttons>span {
         background: rgba(255, 255, 255, 0.6);
         border-radius: 7px;
         padding: 0 5px;
       }
     </style>
     
-    <paper-dialog on-tap="flipChips">
+    <div on-tap="flipChips">
       <h2>[[heading]] <template is="dom-repeat" items="[[icons]]"><iron-icon style="float: right" icon="[[item]]"></iron-icon></template></h2>      
       <paper-dialog-scrollable>
         <div style="min-height: 200px;">
@@ -79,7 +86,7 @@
           <img on-tap="flipChipsTest" style="position: fixed;bottom: 17px;margin-left: -30px;left: 50%;height: 60px;" src="[[svg]]" autofocus/>
         </div>
       </template>
-    </paper-dialog>
+    </div>
     <template is="dom-if" if="[[!svg]]">
       <paper-fab style="position: fixed;bottom: 30px;margin-left: -29px;left: 50%;" icon="android" on-tap="addNew" autofocus ></paper-fab>
     </template>
