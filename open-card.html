@@ -37,7 +37,7 @@
     <template is="dom-if" if="[[opened]]">
       <div on-tap="flipChips">
         <h2>[[heading]] <template is="dom-repeat" items="[[icons]]"><iron-icon style="float: right" icon="[[item]]"></iron-icon></template></h2>      
-        <div style="min-height: 200px;">
+        <div style="min-height: 200px;max-height: 75%;overflow: auto;">
           <template is="dom-if" if="[[!loading]]">
             <iron-pages selected="[[selected]]" items="{{items}}">
               <slot></slot>
