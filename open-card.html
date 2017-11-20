@@ -35,7 +35,7 @@
       }
     </style>
     
-    <div on-tap="flipChips" hidden="![[opened]]">
+    <div on-tap="flipChips" hidden$="![[opened]]">
       <h2>[[heading]] <template is="dom-repeat" items="[[icons]]"><iron-icon style="float: right" icon="[[item]]"></iron-icon></template></h2>      
       <paper-dialog-scrollable>
         <div style="min-height: 200px;">
