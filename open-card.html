@@ -34,7 +34,7 @@
         padding: 0 5px;
       }
     </style>
-    <template is="dom-if" if="[[!opened]]">
+    <template is="dom-if" if="[[opened]]">
       <div on-tap="flipChips">
         <h2>[[heading]] <template is="dom-repeat" items="[[icons]]"><iron-icon style="float: right" icon="[[item]]"></iron-icon></template></h2>      
         <paper-dialog-scrollable>
