@@ -37,18 +37,16 @@
     <template is="dom-if" if="[[opened]]">
       <div on-tap="flipChips">
         <h2>[[heading]] <template is="dom-repeat" items="[[icons]]"><iron-icon style="float: right" icon="[[item]]"></iron-icon></template></h2>      
-        <paper-dialog-scrollable>
-          <div style="min-height: 200px;">
-            <template is="dom-if" if="[[!loading]]">
-              <iron-pages selected="[[selected]]" items="{{items}}">
-                <slot></slot>
-              </iron-pages>
-            </template>
-            <template is="dom-if" if="[[loading]]">
-              <div style="text-align: center"><paper-spinner active></paper-spinner></div>
-            </template>
-          </div>
-        </paper-dialog-scrollable>
+        <div style="min-height: 200px;">
+          <template is="dom-if" if="[[!loading]]">
+            <iron-pages selected="[[selected]]" items="{{items}}">
+              <slot></slot>
+            </iron-pages>
+          </template>
+          <template is="dom-if" if="[[loading]]">
+            <div style="text-align: center"><paper-spinner active></paper-spinner></div>
+          </template>
+        </div>
         <template is="dom-if" if="[[!flippedChips]]">
           <template is="dom-if" if="[[chips.length]]">
             <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 401;" >
