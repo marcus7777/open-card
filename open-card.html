@@ -135,7 +135,7 @@
       if (this.selected) {
         this.selected--
       } else {
-        this.$$("paper-dialog").close()
+        this.opened = false
         this.fire("cancel")
       }
     },
@@ -144,7 +144,7 @@
         this.selected++
       } else {
         this.selected = 0
-        this.$$("paper-dialog").close()
+        this.opened = false
         this.fire("done")
       } 
     },
