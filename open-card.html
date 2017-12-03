@@ -36,7 +36,7 @@
     </style>
     <template is="dom-if" if="[[opened]]">
       <div on-tap="flipChips">
-        <h2>[[heading]] <template is="dom-repeat" items="[[icons]]"><iron-icon style="float: right" icon="[[item]]"></iron-icon></template></h2>      
+        <template is="dom-repeat" items="[[icons]]"><iron-icon style="float: right" icon="[[item]]"></iron-icon></template>
         <div style="min-height: 200px;max-height: 75%;overflow: auto;">
           <template is="dom-if" if="[[!loading]]">
             <iron-pages selected="[[selected]]" items="{{items}}">
@@ -102,10 +102,6 @@
         type:Number,
         value:0,
         notify:true,
-      },
-      heading:{
-        value: "Add",
-        type: String,
       },
       flippedChips: {
         value: false,
