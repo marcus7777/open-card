@@ -86,12 +86,6 @@
         </template>
       </div>
     </template>
-    <template is="dom-if" if="[[!svg]]">
-      <paper-fab style="position: fixed;bottom: 30px;margin-left: -29px;left: 50%;" icon="android" on-tap="addNew" autofocus ></paper-fab>
-    </template>
-    <template is="dom-if" if="[[svg]]">
-      <img style="position: fixed;bottom: 17px;margin-left: -30px;left: 50%;height: 60px;" src="[[svg]]" on-tap="addNew" autofocus />
-    </template>
   </template>
 </dom-module>
 <script>
@@ -141,11 +135,6 @@
         this.opened = false
         this.fire("done")
       } 
-    },
-    addNew: function(){
-      this.selected = 0
-      this.open()
-      this.fire("new")
     },
     open: function(){
       this.opened = true
