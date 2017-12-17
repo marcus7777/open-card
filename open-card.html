@@ -159,6 +159,11 @@
         this.add()
       } else if ( command === 'disregard' || command === "delete" || command === "cancel" || command === "edit" || command === "remove") {
         this.remove()
+      } else {
+        this.fire("chip",{
+          chip: command,
+          prompt: this.prompt,
+        })
       }
     },
     flipChipsTest: function() {
