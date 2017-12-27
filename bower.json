@@ -14,7 +14,7 @@
     "paper-fab": "PolymerElements/paper-fab#~1.2.2",
     "paper-chip": "bendavis78/paper-chip#^1.1.2", 
     "paper-dialog": "PolymerElements/paper-dialog#~1.1.0",
-    "quill-js": "marcusss7777/quill-js"
+    "quill-js": "marcus7777/quill-js"
   },
   "devDependencies": {
     "iron-test-helpers": "*",
