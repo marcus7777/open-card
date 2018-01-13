@@ -155,7 +155,7 @@
     },
     fireOtherChip: function(e){
       var command = e.currentTarget.innerText.replace("\n","").trim().toLowerCase()
-      if ( command === "done" || command === "save" || command === "add" || command === "show it") {
+      if ( command === "return" || command === "save" || command === "add" || command === "show it") {
         this.add()
       } else if ( command === 'disregard' || command === "delete" || command === "cancel" || command === "edit" || command === "remove") {
         this.remove()
