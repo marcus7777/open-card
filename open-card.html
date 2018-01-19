@@ -15,18 +15,18 @@
   <template>
     <style>
       :host > div {
-        display: flex;
-        flex-direction: column;
         justify-content: space-between;
-        position: absolute;
-        background: #fff;
+        flex-direction: column;
+        background: #fff; 
+        position: fixed;  
+        display: flex;     
         z-index: 1000;
         height: 100%;
         width: 100%;
+        padding: 0;
+        margin: 0;
         left: 0;
         top: 0;
-        margin: 0;
-        padding: 0;
       }
       :host > div .buttons>span {
         background: rgba(255, 255, 255, 0.6);
