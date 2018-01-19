@@ -74,19 +74,13 @@
           </template>
         </template>
         <template is="dom-if" if="[[prompt]]">
-          <div class="buttons" style="display: flex;justify-content: space-evenly;padding: 8px;z-index: 401;flex-wrap: wrap-reverse;" on-tap="flipChips">
-            <span>[[prompt]]</span>
-          </div>
+          <span>[[prompt]]</span>
         </template>
         <template is="dom-if" if="[[!svg]]">
-          <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 401;flex-wrap: wrap-reverse;" on-tap="flipChips">
-            <paper-fab icon="android" on-tap="flipChips" autofocus ></paper-fab>
-          </div>
+          <paper-fab icon="android" on-tap="flipChips" autofocus ></paper-fab>
         </template>
         <template is="dom-if" if="[[svg]]">
-          <div class="buttons" style="justify-content: space-evenly;padding: 8px;z-index: 400;flex-wrap: wrap-reverse;" on-tap="flipChips">
-            <img on-tap="flipChipsTest" style="position: fixed;bottom: 17px;margin-left: -30px;left: 50%;height: 60px;" src="[[svg]]" autofocus/>
-          </div>
+          <img on-tap="flipChipsTest" style="position: fixed;bottom: 17px;margin-left: -30px;left: 50%;height: 60px;" src="[[svg]]" autofocus/>
         </template>
       </div>
     </template>
