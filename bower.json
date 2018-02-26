@@ -8,7 +8,7 @@
     "web-components"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#~1.11.1",
+    "polymer": "Polymer/polymer#^1.11.3",
     "iron-pages": "PolymerElements/iron-pages#~1.0.9",
     "paper-dialog-scrollable": "PolymerElements/paper-dialog-scrollable#~1.1.5",
     "paper-fab": "PolymerElements/paper-fab#~1.2.2",
