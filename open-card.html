@@ -35,7 +35,7 @@
       }
     </style>
     <template is="dom-if" if="[[opened]]">
-      <div on-tap="flipChips">
+      <div>
         <template is="dom-repeat" items="[[icons]]"><iron-icon style="float: right" icon="[[item]]"></iron-icon></template>
         <div style="height: 80vh;overflow: auto;padding: 10vh 0;">
           <template is="dom-if" if="[[!loading]]">
