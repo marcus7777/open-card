@@ -50,7 +50,7 @@
         <template is="dom-if" if="[[!flippedChips]]">
           <template is="dom-if" if="[[chips.length]]">
             <div style="max-width: 500px">
-              <div style="position: fixed;bottom: 20px;justify-content: space-evenly;flex: auto;width: 98%;display: flex;flex-wrap: wrap-reverse;z-index: 3;">
+              <div style="position: fixed;bottom: 72px;justify-content: space-evenly;flex: auto;width: 100%;display: flex;flex-wrap: wrap-reverse;z-index: 3;">
                 <template is="dom-repeat" items="[[chips]]">
                   <paper-chip on-tap="fireChip" Single-line value="[[index]]"  style="z-index: 400;">
                     <div class="label">[[item]]</div>
@@ -63,7 +63,7 @@
         <template is="dom-if" if="[[flippedChips]]">
           <template is="dom-if" if="[[otherChips.length]]">
             <div style="max-width: 500px">
-              <div style="position: fixed;bottom: 20px;justify-content: space-evenly;flex: auto;width: 98%;display: flex;flex-wrap: wrap-reverse;z-index: 3;">
+              <div style="position: fixed;bottom: 72px;justify-content: space-evenly;flex: auto;width: 100%;display: flex;flex-wrap: wrap-reverse;z-index: 3;">
                 <template is="dom-repeat" items="[[otherChips]]">
                   <paper-chip on-tap="fireOtherChip" index="[[index]]" Single-line value="[[index]]">
                     <div class="label">[[item]]</div>
