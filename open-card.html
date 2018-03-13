@@ -51,26 +51,14 @@
         <template is="dom-if" if="[[!flippedChips]]">
           <template is="dom-if" if="[[_chips.length]]">
             <div style="max-width: 500px">
-              <div style="position: fixed;bottom: 72px;justify-content: space-evenly;flex: auto;width: 100%;display: flex;flex-wrap: wrap-reverse;z-index: 3;">
-                <template is="dom-repeat" items="[[_chips]]">
-                  <paper-chip on-tap="fireChip" Single-line value="[[index]]"  style="z-index: 400;">
-                    <div class="label">[[item]]</div>
-                  </paper-chip>
-                </template>
-              </div>
+              <deko-display-chips items="[[_chips]]"></deko-display-chips>
             </div>
           </template>
         </template>
         <template is="dom-if" if="[[flippedChips]]">
           <template is="dom-if" if="[[_otherChips.length]]">
             <div style="max-width: 500px">
-              <div style="position: fixed;bottom: 72px;justify-content: space-evenly;flex: auto;width: 100%;display: flex;flex-wrap: wrap-reverse;z-index: 3;">
-                <template is="dom-repeat" items="[[_otherChips]]">
-                  <paper-chip on-tap="fireOtherChip" index="[[index]]" Single-line value="[[index]]">
-                    <div class="label">[[item]]</div>
-                  </paper-chip>
-                </template>
-              </div>
+              <deko-display-chips items="[[_otherChips]]"></deko-display-chips>
             </div>
           </template>
         </template>
