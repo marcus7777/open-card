@@ -107,7 +107,7 @@
       },
       otherChips:{
         type: Array,
-        value: ["Cancel","Return"]
+        value: []
       },
       prompt:{
         value: ""
@@ -117,6 +117,7 @@
       },
     },
     get_chips: function(chips, addChips) {
+      this.flippedAt = performance.now()
       return chips.concat(addChips)
     },
     remove: function(){
@@ -142,25 +143,6 @@
     close: function(){
       this.opened = false
       this.flippedChips = false
-    },
-    fireChip: function(e,d){
-      this.fire("chip",{
-        chip: e.currentTarget.innerText.replace("\n",""),
-        prompt: this.prompt,
-      })
-    },
-    fireOtherChip: function(e){
-      var command = e.currentTarget.innerText.replace("\n","").trim().toLowerCase()
-      if ( command === "return" || command === "save" || command === "add" || command === "show it") {
-        this.add()
-      } else if ( command === 'disregard' || command === "delete" || command === "cancel" || command === "edit" || command === "remove") {
-        this.remove()
-      } else {
-        this.fire("chip",{
-          chip: command,
-          prompt: this.prompt,
-        })
-      }
     },
     flipChipsTest: function() {
       this.set("flippedChips", !this.flippedChips)
