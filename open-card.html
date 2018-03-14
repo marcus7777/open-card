@@ -56,9 +56,9 @@
           </template>
         </template>
         <template is="dom-if" if="[[flippedChips]]">
-          <template is="dom-if" if="[[_otherChips.length]]">
+          <template is="dom-if" if="[[otherChips.length]]">
             <div style="z-index: 3;max-width: 500px">
-              <deko-display-chips items="[[_otherChips]]"></deko-display-chips>
+              <deko-display-chips items="[[otherChips]]"></deko-display-chips>
             </div>
           </template>
         </template>
@@ -103,7 +103,7 @@
         value: []
       },
       _otherChips: {
-        computed: "get_chips(otherChips,[])"
+        computed: "get_chips(otherChips,addChips)"
       },
       otherChips:{
         type: Array,
